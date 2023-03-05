@@ -45,7 +45,7 @@ const listOfAdviceVerb = [
 
 ]
 
-const listOfAdviceIf {
+const listOfAdviceIf = [
     'si tienes miedo de hacer algo arriesgado, sólo espera unos segundos antes a ver si tu yo del futuro llega a detenerte',
     'si te duermes en el trabajo, levanta tu cabeza lentamente y di fuerte "Amen!"',
     'si comes galletas, por tener tan pocas vitaminas, debes comer muchas',
@@ -55,23 +55,27 @@ const listOfAdviceIf {
     'sólo las gallinas logran algo quedándose sentadas sin hacer nada, a trabajar',
     'si en tu vida ves el vaso medio lleno, ponle hielo y whisky para mejorar el día'
 
-}
+]
 
 const listOfColors = [
-    'negro claro',
-    'fondo blanco',
-    'amarillo pollito',
-    'rojo pasión',
-    'azul chillón',
-    'verde vómito',
-    'verde lechuga',
-    'blanco pálido',
-    'rojo alergia',
-    'rojo tanga',
-    'blanco oscuro',
-    'gris pasión'
+    'Negro Claro',
+    'Negro Pálido',
+    'Amarillo Relajante',
+    'Rojo Frío',
+    'Azul Cálido',
+    'Blanco intenso',
+    'Rojo Tanga',
+    'Blanco Oscuro',
+    'Gris Pasión',
 ]
 
+let name, obvious, barnum, AdviceIf, adviceVerb, color;
 const predictionTemplates = [
-    `${name}, los astros me dicen que ${obvious}, lo cual se alínea con en este momento porque mercurio esta retrógrado. Hoy será un día relativamente positivo, visto desde el futuro hacia atrás, dentro de lo que cabe. La segunda letra de tu nombre ${name[1]}, en conjunto con jupiter en sagitario, me indican que ${barnum}. Particularmente hoy, ${AdviceIf}. Enfócate en ${adviceVerb}. Color clave para hoy: ${color} `
+    `${name}, los astros me dicen que ${obvious}, lo cual se alínea con en este momento porque mercurio esta retrógrado. Hoy será un día relativamente positivo, visto desde el futuro hacia atrás, dentro de lo que cabe. La segunda letra de tu nombre ${""}, en conjunto con jupiter en sagitario, me indican que ${barnum}. Particularmente hoy, ${AdviceIf}. Enfócate en ${adviceVerb}. Color clave para hoy: ${color} `,
+
 ]
+
+const randomMessage = list => list[Math.floor(Math.random() * list.length)];
+
+console.log (randomMessage(listOfColors));
+// console.log(listOfColors[1]);
