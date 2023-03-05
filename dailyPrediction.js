@@ -83,6 +83,8 @@ let templates = [
     `La energía de la madre tierra me habla, ${username}, y me indica que ${obvious}. Tu nombre, desde la "${username[0]}" hasta la "${username[username.length-1]}", hablan de que ${barnum}. Por eso hoy tendrás un buen día si te enfocas sólo en lo positivo, y uno malo si te enfocas sólo en lo negativo. Recuerda que ${adviceIf} y presta antención a ${adviceVerb}. Vístete de tu color clave para la buena suerte: ${color}.`,
 
     `Puedo sentir tu mantra, ${username}, me grita desde la energía eterna, que ${obvious}. Los colores de tus chakras me indican que ${barnum}. Por eso ${username}, antes de preocuparte, ocuparte. Hoy especialmente ${adviceIf} y recuerda que es mejor ${adviceVerb}. Tu color de la suerte: ${color}.`,
+
+    `Me conecto con los códigos galácticos, hola ${username}, hola gemela, hola seres telequinéticos. Las frecuencias vibracionales me indican que ${obvious}. Ahhhna Ki na na le. Tus planos los planos psíquicos energéticos me transmiten que ${barnum}. Por eso, escucha la electromagnética etérea ${username},  ${adviceIf} y recuerda hoy antes de que termine el día ${adviceVerb}. Tu color de tu aura cósmica es: ${color}.`
     
     ];
     return randomize(templates);
@@ -92,4 +94,4 @@ let templates = [
 const myPrediction = myName => predictionTemplates(myName);
 
 // console.log (randomize(listOfColors));
-console.log(myPrediction('Jose'));
+console.log(myPrediction('Lisseth'));
