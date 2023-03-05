@@ -91,7 +91,11 @@ let templates = [
 }
 
 //MyPrediction function puts all elements together and returns de random prediction
-const myPrediction = myName => predictionTemplates(myName);
+// const myPrediction = myName => predictionTemplates(myName);
 
-// console.log (randomize(listOfColors));
-console.log(myPrediction('Lisseth'));
+
+// let myName = document.getElementById('fname').value;
+const myPrediction = () => {    
+    document.getElementById("prediction").innerText = predictionTemplates(document.getElementById('fname').value);
+}
+
