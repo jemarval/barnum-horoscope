@@ -11,7 +11,7 @@
     
 body {
     line-height: 1.667;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Fondamento', 'Josefin Sans', cursive;
     font-weight: 400;
     font-size: 1.125rem;
     color: var(--dark-gray);
@@ -46,7 +46,7 @@ video {
     --clr-light-gray: hsl(0, 0%, 85%);
     --clr-dark-gray: hsl(0, 0%, 15%);
     --clr-black: hsl(258, 50%, 12%); /* Can be the same as main, with lightness turned down */
-    --clr-main: hsl(258, 100%, 39%);
+    --clr-main: hsl(258, 50%, 28%);
     --clr-main-white: hsl(258, 100%, 97%);
     --border-radius: 1rem;
 }
@@ -54,6 +54,7 @@ video {
 h1 {
     font-size: 2rem;
     text-align: center;
+    color: var(--clr-main);
 }
 
 p {
@@ -85,20 +86,47 @@ strong {
 
 @media only screen and (max-width: 50rem) {
     #prediction-box {
-        min-width: none;
+        min-width: 20rem;
         width: 100%;
     }
 }
 
 #prediction {
     min-height: 250px;
+    margin: 2rem auto;
+    font-size: 1.2rem;
+    
   }
+
+#form {
+    display: flex;
+    flex-direction: column;
+    /* outline: auto; */
+    min-width: 20rem;
+}
+
+/* #name {
+    display: flex;
+} */
+
+#fname {
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+label {
+    margin-right: 1rem;
+    font-weight: 700;
+}
 
 #submit {
     width: 100%;
-    margin: 1rem;
+    margin: 1rem auto;
     background-color: var(--clr-black);
     color: var(--clr-main-white);
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
 }
 
 svg.star-background {
