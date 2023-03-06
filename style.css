@@ -58,6 +58,11 @@ h1 {
 
 p {
     text-align: justify;
+    margin-bottom: 1rem;
+}
+strong {
+    font-size: 1.1rem;
+    font-weight: 700;
 }
 
 
@@ -78,6 +83,24 @@ p {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
+@media only screen and (max-width: 50rem) {
+    #prediction-box {
+        min-width: none;
+        width: 100%;
+    }
+}
+
+#prediction {
+    min-height: 250px;
+  }
+
+#submit {
+    width: 100%;
+    margin: 1rem;
+    background-color: var(--clr-black);
+    color: var(--clr-main-white);
+}
+
 svg.star-background {
     position: absolute;
     z-index: -1;
@@ -88,6 +111,4 @@ svg.star-background {
     height: 100%;
   }
 
-  #prediction {
-    min-height: 250px;
-  }
+ 

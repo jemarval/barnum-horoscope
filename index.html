@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <title>Tu Futuro Hoy</title>
 </head>
 <body>
@@ -17,12 +17,14 @@
             <h1>Tu Futuro Hoy</h1>
             <p>Dime tu primer nombre, y te diré qué te depara el futuro hoy.</p>
         </div>
-        <form action="">
-            <label for="fname">Primer nombre:</label><br>
-            <input type="text" id="fname" name="fname"><br><br>
+        <div>
+            <label for="fname">Primer nombre:</label>
+            <input type="text" id="fname" name="fname"><br>
             <input type="submit" id="submit" value="Mi futuro" onclick="myPrediction()">
-        </form>
-        <div id="prediction"></div>
+        </div>
+        <div id="prediction">
+            <p id="prediction-text"></p>
+        </div>
     </div>
     
     

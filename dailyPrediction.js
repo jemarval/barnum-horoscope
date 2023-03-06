@@ -76,15 +76,15 @@ color = randomize(listOfColors)
 // List of prediction message templates
 const predictionTemplates = username => {
 let templates = [
-    `${username}, los astros me dicen que ${obvious}, lo cual se alínea con este momento porque mercurio esta retrógrado. Hoy será un día relativamente positivo, visto desde el futuro hacia atrás, dentro de lo que cabe. La segunda letra de tu nombre "${username[1]}", en conjunto con jupiter en sagitario, me indican que ${barnum}. Particularmente hoy ${username}, ${adviceIf}. Enfócate en ${adviceVerb}. Color clave del día: ${color} .`,
+    `<p><strong>${username}</strong>, los astros me dicen que ${obvious}, lo cual se alínea con este momento porque mercurio esta retrógrado.</p><p> Hoy será un día relativamente positivo, visto desde el futuro hacia atrás, dentro de lo que cabe.</p><p> La segunda letra de tu nombre "${username[1]}", en conjunto con jupiter en sagitario, me indican que ${barnum}. Particularmente hoy <strong>${username}</strong>, ${adviceIf}. Enfócate en ${adviceVerb}.</p><p> Color clave del día: ${color}.</p>`,
 
-    `El universo me indica en este momento, ${username}, que ${obvious}. Puedes tener la tranquilidad de que hoy es un nuevo día y que mañana siempre vendrá otro si no mueres hoy. Tu nombre empieza por "${username[0]}", lo que alineado con Piscis en Mercurio, que ${barnum}. Por eso especialmente en este día hoy ${username}, recuerda que ${adviceIf}. Consejo: ${adviceVerb}. Tu color clave para hoy: ${color} .`,
+    `<p>El universo me indica en este momento, <strong>${username}</strong>, que ${obvious}.</p><p> Puedes tener la tranquilidad de que hoy es un nuevo día y que mañana siempre vendrá otro si no mueres hoy.</p><p> Tu nombre empieza por "${username[0]}", lo que alineado con Piscis en Mercurio, que ${barnum}.</p><p> Por eso especialmente en este día hoy <strong>${username}</strong>, recuerda que ${adviceIf}. Consejo: ${adviceVerb}.</p><p> Tu color clave para hoy: ${color}.</p>`,
 
-    `La energía de la madre tierra me habla, ${username}, y me indica que ${obvious}. Tu nombre, desde la "${username[0]}" hasta la "${username[username.length-1]}", hablan de que ${barnum}. Por eso hoy tendrás un buen día si te enfocas sólo en lo positivo, y uno malo si te enfocas sólo en lo negativo. Recuerda que ${adviceIf} y presta antención a ${adviceVerb}. Vístete de tu color clave para la buena suerte: ${color}.`,
+    `<p>La energía de la madre tierra me habla, <strong>${username}</strong>, y me indica que ${obvious}.</p><p> Tu nombre, desde la "${username[0]}" hasta la "${username[username.length-1]}", hablan de que ${barnum}. Por eso hoy tendrás un buen día si te enfocas sólo en lo positivo, y uno malo si te enfocas sólo en lo negativo.</p><p> Recuerda que ${adviceIf} y presta antención a ${adviceVerb}.</p><p> Vístete de tu color clave para la buena suerte: ${color}.</p>`,
 
-    `Puedo sentir tu mantra, ${username}, me grita desde la energía eterna, que ${obvious}. Los colores de tus chakras me indican que ${barnum}. Por eso ${username}, antes de preocuparte, ocuparte. Hoy especialmente ${adviceIf} y recuerda que es mejor ${adviceVerb}. Tu color de la suerte: ${color}.`,
+    `<p>Puedo sentir tu mantra, <strong>${username}</strong>, me grita desde la energía eterna, que ${obvious}.</p><p> Los colores de tus chakras me indican que ${barnum}. Por eso <strong>${username}</strong>, antes de preocuparte, ocuparte.</p><p> Hoy especialmente ${adviceIf} y recuerda que es mejor ${adviceVerb}.</p><p> Tu color de la suerte: ${color}.</p>`,
 
-    `Me conecto con los códigos galácticos, hola ${username}, hola gemela, hola seres telequinéticos. Las frecuencias vibracionales me indican que ${obvious}. Ahhhna Ki na na le. Tus planos los planos psíquicos energéticos me transmiten que ${barnum}. Por eso, escucha la electromagnética etérea ${username},  ${adviceIf} y recuerda hoy antes de que termine el día ${adviceVerb}. Tu color de tu aura cósmica es: ${color}.`
+    `<p>Me conecto con los códigos galácticos, hola <strong>${username}</strong>, hola gemela, hola seres telequinéticos. Las frecuencias vibracionales me indican que ${obvious}.</p><p> Ahhhna Ki na na le.</p><p> Tus planos los planos psíquicos energéticos me transmiten que ${barnum}. Por eso, escucha la electromagnética etérea <strong>${username}</strong>,  ${adviceIf} y recuerda hoy antes de que termine el día ${adviceVerb}. </p><p>Tu color de tu aura cósmica es: ${color}.</p>`
     
     ];
     return randomize(templates);
@@ -95,7 +95,13 @@ let templates = [
 
 
 // let myName = document.getElementById('fname').value;
+
+// let button = document.getElementById("submit");
+
 const myPrediction = () => {    
-    document.getElementById("prediction").innerText = predictionTemplates(document.getElementById('fname').value);
+    let message = predictionTemplates(document.getElementById('fname').value);
+    document.getElementById("prediction").innerHTML = message;
+    console.log(message)
+
 }
 
