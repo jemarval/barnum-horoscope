@@ -61,11 +61,15 @@ p {
     text-align: justify;
     margin-bottom: 1rem;
 }
+
 strong {
     font-size: 1.1rem;
     font-weight: 700;
 }
 
+.underline {
+    text-decoration: underline;
+}
 
 #prediction-box {
     background-color: var(--clr-main-white);
