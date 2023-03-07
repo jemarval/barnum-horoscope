@@ -21,7 +21,7 @@ const listOfBarnum = [
     'sientes la necesidad de que otros te aprecien o admiren',
     'tienes muchas capacidades que no conoces y que no utilizas',
     'aunque tratas de parecer en control, escondes alguna preocupación o inseguridad',
-    'tienes una tendencia a evaluarte y criticarte',
+    'tienes una tendencia a evaluarte y autocriticarte',
     'veces tienes serias dudas sobre si has tomado una decisión correcta',
     'puedes demostrar una personalidad sociable entre conocidos, pero muchas veces prefieres mantener reserva y distancia con extraños',
     'aunque sabes que tienes inseguridades y debilidades, generalmente tienes la capacidad de compensarlas'
@@ -76,15 +76,15 @@ color = randomize(listOfColors)
 // List of prediction message templates
 const predictionTemplates = username => {
 let templates = [
-    `<p><strong>${username}</strong>, los astros me dicen que ${obvious}, lo cual se alínea con este momento porque mercurio esta retrógrado.</p><p> Hoy será un día relativamente positivo, visto desde el futuro hacia atrás, dentro de lo que cabe.</p><p> La segunda letra de tu nombre "${username[1]}", en conjunto con jupiter en sagitario, me indican que ${barnum}. Particularmente hoy <strong>${username}</strong>, ${adviceIf}. Enfócate en ${adviceVerb}.</p><p> <span class="underline">Color clave del día</span>: ${color}.</p>`,
+    `<p><strong>${username}</strong>, los astros me dicen que ${obvious}, lo cual se alínea con mercurio en retrógrado.</p><p> Hoy será un día positivo, visto desde adelante hacia atrás, dentro de lo que cabe.</p><p> La segunda letra de tu nombre "${username[1]}", en conjunto con la órbita de jupiter, me transmiten que ${barnum}. Particularmente hoy <strong>${username}</strong>, ${adviceIf}. Enfócate en ${adviceVerb}.</p><p> <span class="underline">Color clave del día</span>: ${color}.</p>`,
 
-    `<p>El universo me indica en este momento, <strong>${username}</strong>, que ${obvious}.</p><p> Puedes tener la tranquilidad de que hoy es un nuevo día y que mañana siempre vendrá otro si no mueres hoy.</p><p> Tu nombre empieza por "${username[0]}", lo que alineado con Piscis en Mercurio, que ${barnum}.</p><p> Por eso especialmente en este día hoy <strong>${username}</strong>, recuerda que ${adviceIf}. Consejo: ${adviceVerb}.</p><p> <span class="underline">Tu color clave para hoy</span>: ${color}.</p>`,
+    `<p>El universo me indica en este momento, <strong>${username}</strong>, que ${obvious}.</p><p> Hoy es un nuevo día y mañana siempre vendrá otro si no mueres hoy.</p><p> La primera letra "${username[0]}" de tu nombre, alineada con Piscis en Saturno, me dice que ${barnum}.</p><p> Por eso especialmente ahora <strong>${username}</strong>, recuerda que ${adviceIf}. Consejo: ${adviceVerb}.</p><p> <span class="underline">Tu color clave para hoy</span>: ${color}.</p>`,
 
-    `<p>La energía de la madre tierra me habla, <strong>${username}</strong>, y me indica que ${obvious}.</p><p> Tu nombre, desde la "${username[0]}" hasta la "${username[username.length-1]}", hablan de que ${barnum}. Por eso hoy tendrás un buen día si te enfocas sólo en lo positivo, y uno malo si te enfocas sólo en lo negativo.</p><p> Recuerda que ${adviceIf} y presta antención a ${adviceVerb}.</p><p> <span class="underline">Vístete de tu color clave para la buena suerte</span>: ${color}.</p>`,
+    `<p>La energía de la madre tierra me habla, <strong>${username}</strong>, y me indica que ${obvious}.</p><p> Tu nombre, desde la "${username[0]}" hasta la "${username[username.length-1]}" final, hablan de que ${barnum}. Por eso hoy tendrás un buen día si te enfocas sólo en lo positivo, y uno malo si te enfocas sólo en lo negativo.</p><p> Recuerda que ${adviceIf} y presta antención a ${adviceVerb}.</p><p> <span class="underline">Vístete de tu color clave para la buena suerte</span>: ${color}.</p>`,
 
-    `<p>Puedo sentir tu mantra, <strong>${username}</strong>, me grita desde la energía eterna, que ${obvious}.</p><p> Los colores de tus chakras me indican que ${barnum}. Por eso <strong>${username}</strong>, antes de preocuparte, ocuparte.</p><p> Hoy especialmente ${adviceIf} y recuerda que es mejor ${adviceVerb}.</p><p> <span class="underline">Tu color de la suerte</span>: ${color}.</p>`,
+    `<p>Puedo sentir tu mantra, <strong>${username}</strong>, me grita desde la energía eterna, que ${obvious}.</p><p> Los colores de tus chakras me transmiten también que ${barnum}. Por eso <strong>${username}</strong>, antes de preocuparte, ocúpate.</p><p> Hoy, tén presente que ${adviceIf} y recuerda que es mejor ${adviceVerb}.</p><p> <span class="underline">Tu color de la suerte</span>: ${color}.</p>`,
 
-    `<p>Me conecto con los códigos galácticos, hola <strong>${username}</strong>, hola gemela, hola seres telequinéticos. Las frecuencias vibracionales me indican que ${obvious}.</p><p> Ahhhna Ki na na le.</p><p> Tus planos los planos psíquicos energéticos me transmiten que ${barnum}. Por eso, escucha la electromagnética etérea <strong>${username}</strong>,  ${adviceIf} y recuerda hoy antes de que termine el día ${adviceVerb}. </p><p><span class="underline">Tu color de tu aura cósmica es</span>: ${color}.</p>`
+    `<p>Me conecto con los seres intergalácticos, hola <strong>${username}</strong>, hola gemela, hola Anunakis presentes. Las frecuencias vibracionales me transmiten que ${obvious}.</p><p> Ahhhna Ki na na le.</p><p> Tus planos psíquicos energéticos me dicen que ${barnum}. Por eso, escucha la electromagnética etérea <strong>${username}</strong>,  ${adviceIf} y recuerda hoy ${adviceVerb}. </p><p><span class="underline">Tu color de tu aura cósmica es</span>: ${color}.</p>`
     
     ];
     return randomize(templates);
@@ -98,10 +98,44 @@ let templates = [
 
 // let button = document.getElementById("submit");
 
+let prediction = document.getElementById("prediction");
+let fname = document.getElementById('fname');
+let button = document.getElementById('button');
+let tryagain = document.getElementById('tryagain');
+let tryagainName = document.getElementById('tryagain-name')
+
 const myPrediction = () => {    
     let message = predictionTemplates(document.getElementById('fname').value);
-    document.getElementById("prediction").innerHTML = message;
-    console.log(message)
+
+    
+    if (document.getElementById('fname').value != ""){
+        prediction.innerHTML = message;
+        button.value = 'Regresa mañana';
+        button.style.backgroundColor = 'var(--clr-light-gray)';
+        button.style.color = 'var(--clr-main)';
+        tryagain.style.display = 'block';
+        fname.style.display = 'none';
+        tryagainName.innerHTML = document.getElementById('fname').value;
+        button.style.cursor = 'default';
+        button.removeEventListener('click', myPrediction);
+    } else {
+        prediction.innerHTML = '<p style="opacity: 0.7">Necesito tu primer nombre... <br> para conectarte  con el espacio-tiempo del futuro.</p>'
+    }
+}
+
+let someoneElse = () => {
+    fname.style.display = 'block';
+    button.value = 'Quiero saber!';
+    button.style.backgroundColor = 'var(--clr-black)';
+    button.style.color = 'var(--clr-main-white)';
+    tryagain.style.display = 'none';
+    button.addEventListener('click', myPrediction);
+    prediction.innerHTML = '';
+    document.getElementById('fname').value = '';
 
 }
+
+button.addEventListener('click', myPrediction);
+tryagain.addEventListener('click', someoneElse);
+
 

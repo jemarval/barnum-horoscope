@@ -44,6 +44,7 @@ video {
 
 :root {
     --clr-light-gray: hsl(0, 0%, 85%);
+    --clr-opaque-gray: hsla(0, 0%, 15%, 0.8);
     --clr-dark-gray: hsl(0, 0%, 15%);
     --clr-black: hsl(258, 50%, 12%); /* Can be the same as main, with lightness turned down */
     --clr-main: hsl(258, 50%, 28%);
@@ -124,13 +125,30 @@ label {
     font-weight: 700;
 }
 
-#submit {
+#button {
     width: 100%;
     margin: 1rem auto;
     background-color: var(--clr-black);
     color: var(--clr-main-white);
     border-radius: var(--border-radius);
     padding: 0.5rem;
+    cursor: pointer;
+}
+
+#tryagain {
+    display: none;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--clr-opaque-gray);
+    opacity: 0.8;
+    margin-top: -0.8rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#tryagain-name {
+    color: var(--clr-dark-gray);
+    font-weight: 700;
 }
 
 svg.star-background {
@@ -138,7 +156,6 @@ svg.star-background {
     z-index: -1;
     left: 0;
     bottom: 0;
-    
     min-width: 100%;
     height: 100%;
   }

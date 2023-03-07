@@ -23,8 +23,10 @@
         </div>
         <div id="form">
             <!-- <div id="name"><label for="fname">Primer nombre:</label> -->
-            <input type="text" id="fname" name="fname" placeholder="Primer Nombre"><!-- </div> -->
-            <input type="submit" id="submit" value="Dime Mi futuro" onclick="myPrediction()">
+            <input type="text" id="fname" name="fname" placeholder="Tu primer nombre"><!-- </div> -->
+            <!-- Removed " onclick="myPrediction()" property from button -->
+            <input type="submit" id="button" value="Quiero saber!">
+            <p id="tryagain">(No soy <span id="tryagain-name"></span>, quiero saber mi futuro)</p>
         </div>
         <div id="prediction">
             <p id="prediction-text"></p>
